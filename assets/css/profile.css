@@ -1,0 +1,241 @@
+#profile {
+  display: block;
+  width: 50%;
+  z-index: 110;
+  margin-top: 80px;
+  overflow-x: hidden;
+}
+#profile .wrap {
+  position: relative;
+  height: 520px;
+}
+#profile,
+#menu {
+  display: block;
+  width: 100%;
+}
+
+/* profile */
+#profile .wrap .profile {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -80%);
+  animation: anim-profile 1s 2s 1 forwards;
+  height: auto;
+}
+@keyframes anim-profile {
+  100% {
+    transform: translate(-140%, -70%) scale(0.8);
+  }
+}
+#profile .wrap .profile .img img {
+  display: block;
+  position: relative;
+  width: 100%;
+  border-radius: 50%;
+  transform: scale(0.9);
+}
+#profile .wrap .profile .img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 2px var(--purple);
+  animation: img-up infinite 5s forwards;
+  animation-delay: 0.5s;
+}
+@keyframes img-up {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 2px var(--purple);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 20px var(--purple);
+    opacity: 0.7;
+  }
+}
+#profile .wrap .profile .img {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  z-index: 100;
+}
+
+#profile .wrap .profile .img .crc {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #0003;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #0005;
+  animation: crc-rotate infinite 20s forwards;
+  border-top: 2px solid var(--purple);
+  border-bottom: 2px solid var(--purple);
+  z-index: -1;
+  width: 140%;
+  height: 140%;
+  animation-delay: 1s;
+  background: var(--bg);
+}
+
+@keyframes crc-rotate {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(180deg);
+    box-shadow: 0 0 20px transparent;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+  }
+}
+/* lines */
+#profile .line {
+  display: block;
+  position: absolute;
+  background: var(--purple);
+  width: 1000%;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  animation: profile-line 3s 1s 1 forwards;
+  border-radius: 2px;
+}
+@keyframes profile-line {
+  50% {
+    height: 10px;
+  }
+  100% {
+    height: 10px;
+    width: 600px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+/* line circles */
+#profile .system,
+#profile .system .p,
+#profile .wave {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* / */
+#profile .system {
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+#profile .system .p {
+  width: 30px;
+  height: 30px;
+  background: var(--bg);
+  border: 1px solid var(--purple);
+  border-radius: 50%;
+  margin-left: 200px;
+  animation: system-anim 5s 3s infinite forwards;
+}
+#profile .sys2 {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+@keyframes system-anim {
+  0% {
+    margin-left: 200px;
+  }
+  50% {
+    margin-left: 300px;
+  }
+}
+
+/* anim-texts */
+
+#profile .wrap .content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  position: relative;
+  float: left;
+  margin-top: 150px;
+  margin-left: 50%;
+  opacity: 0;
+  animation: main-text-up 2s 3s 1 forwards;
+}
+@keyframes main-text-up {
+  100% {
+    opacity: 1;
+  }
+}
+#profile .wrap .content span {
+  display: block;
+  width: 100%;
+}
+#profile .wrap .content .title {
+  font: 300 32px var(--roboto);
+  color: var(--white);
+}
+#profile .wrap .content .title .sub {
+  font: 300 16px var(--rubik);
+  color: var(--font-fg-2);
+  padding-left: 10px;
+}
+#profile .wrap .content .links {
+  width: 100%;
+  float: none;
+  padding: 2px;
+}
+#profile .wrap .content .links a {
+  float: left;
+  min-width: 100px;
+  padding: 10px 15px;
+  margin: 2px;
+  color: #fff;
+  border-radius: 4px;
+}
+#profile .wrap .content .links .telegram {
+  background: var(--telegram);
+  border: 1px solid var(--telegram);
+}
+
+#profile .wrap .content .links .discord {
+  background: var(--discord);
+  border: 1px solid var(--discord);
+}
+#profile .wrap .content .links .vk {
+  background: var(--vk);
+  border: 1px solid var(--vk);
+}
+#profile .wrap .content .links .github {
+  background: var(--github);
+  border: 1px solid var(--github);
+}
+
+#profile .wrap .content .text {
+  display: block;
+  max-width: 500px;
+  color: var(--font-fg-3);
+}
+#profile .wrap .content .resume {
+  width: 280px;
+  padding: 8px 16px;
+  color: var(--purple);
+  border: 1px solid var(--purple);
+  text-align: center;
+}
